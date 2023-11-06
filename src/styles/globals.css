@@ -26,6 +26,19 @@
   --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
   /* #endregion  /**======== Primary Color =========== */
+
+  /* #region /**=========== Color =========== */
+  --tw-color-bgPrimary: 217 217 217; /* #d9d9d9 */
+  --tw-color-contentPrimary: 41 41 41; /* #292929 */
+  --tw-drop-shadow-1: 10px 10px 4px rgba(0, 0, 0, 0.5);
+  /* #endregion  /**======== Color =========== */
+}
+
+.dark:root {
+  /* #region /**=========== Color =========== */
+  --tw-color-bgPrimary: 68 68 68; /* #444444 */
+  --tw-color-contentPrimary: 255 255 255; /* #ffffff */
+  /* #endregion  /**======== Color =========== */
 }
 
 @layer base {
@@ -89,6 +102,17 @@
   /* Class to adjust with sticky footer */
   .min-h-main {
     @apply min-h-[calc(100vh-56px)];
+  }
+
+  .bg-linear-radient-primary {
+    background: linear-gradient(
+      80deg,
+      #292929 -2.93%,
+      rgba(255, 255, 255, 0) 212.44%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 

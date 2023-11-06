@@ -1,12 +1,15 @@
 import type { Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
+
+function rgbColor(cssVar: string) {
+  return `rgb(var(${cssVar}) / <alpha-value>)`;
+}
 
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        primary: ['var(--font-poppins)'],
       },
       colors: {
         primary: {
@@ -24,6 +27,9 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#222222',
+        // custom colors
+        bgPrimary: rgbColor('--tw-color-bgPrimary'),
+        contentPrimary: rgbColor('--tw-color-contentPrimary'),
       },
       keyframes: {
         flicker: {
@@ -53,4 +59,5 @@ export default {
     },
   },
   plugins: [require('@tailwindcss/forms')],
+  darkMode: ['class'],
 } satisfies Config;
